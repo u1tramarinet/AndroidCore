@@ -17,6 +17,7 @@ import kotlin.text.toInt
 /**
  * Libraryマネージャー.
  */
+@Suppress("unused")
 class LibraryManager(private val context: Context) {
 
     private data class LibraryMetadata(val offset: Int, val length: Int)
