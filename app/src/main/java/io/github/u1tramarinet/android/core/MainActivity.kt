@@ -11,11 +11,13 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import io.github.u1tramarinet.android.core.common.logging.SequenceLogUtils
 import io.github.u1tramarinet.android.core.ui.theme.AndroidCoreTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        SequenceLogUtils.funIn()
         enableEdgeToEdge()
         setContent {
             AndroidCoreTheme {

@@ -2,12 +2,17 @@ package io.github.u1tramarinet.android.core.common.logging
 
 import io.github.u1tramarinet.android.core.common.logging.facade.DefaultLogFacade
 import io.github.u1tramarinet.android.core.common.logging.facade.LogFacade
+import io.github.u1tramarinet.android.core.common.logging.trace.TraceAnalyzer
 
 object LogUtils {
     private var facade: LogFacade = DefaultLogFacade()
 
     fun setLogFacade(facade: LogFacade) {
         this.facade = facade
+    }
+
+    internal fun getLogFacade(): LogFacade {
+        return facade
     }
 
     fun verbose(message: String, throwable: Throwable? = null) {
@@ -36,5 +41,6 @@ object LogUtils {
         throwable: Throwable? = null
     ) {
         facade.print(level, "LogUtils", message, throwable)
+        TraceAnalyzer.analyze()
     }
 }
